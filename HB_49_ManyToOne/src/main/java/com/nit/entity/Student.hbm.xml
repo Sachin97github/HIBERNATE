@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.nit.entity">
+
+	<class name="Student">
+	<id name="id" type="int">
+			<column name="STDID" />
+			<generator class="sequence" />
+	   </id>
+      <property name="name">
+          <column name="NAME" length="30" />
+              <type name="string"/>
+      </property>
+      <property name="email">
+         <column name="EMAIL" length="30" />
+              <type name="string"/>
+      </property>
+      <property name="contact"/>
+      <property name="address">
+              <column name="ADDRESS" length="30" />
+              <type name="string"/>
+       </property>
+       
+       <many-to-one name="course"
+         class="com.nit.entity.Course"
+         column="COURSE_ID"
+         lazy="proxy"
+         cascade="none">
+        </many-to-one>
+       
+ </class>
+
+
+</hibernate-mapping>

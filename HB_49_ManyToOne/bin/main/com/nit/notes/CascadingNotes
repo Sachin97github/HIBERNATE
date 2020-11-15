@@ -1,0 +1,16 @@
+WHILE SAVING
+cascading = "none"
+ - Data will not we stored
+ - because Child have to store record in Parent Table
+
+WHILE DELETION
+cascade = "all" "none" 
+- if we use this  cascading while delete with HQL then it wont get Any ERROR
+
+if we try to load and delete Child
+cascade ="all" it will give Integrity error
+cascade= "none" it will work  but only delte Child not Parent
+
+this Problem we can solve with HQL query for deletion
+
+

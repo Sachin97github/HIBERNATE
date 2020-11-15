@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.nit.entity">
+	<class name="Course">
+		<id name="id" type="int">
+			<column name="COURSEID" />
+			<generator class="increment" />
+		</id>
+		<property name="name"/>
+		<property name="faculty"/>
+		<property name="startDate" type="date"/>
+		<property name="price" type="double"/>
+	</class>
+</hibernate-mapping>
