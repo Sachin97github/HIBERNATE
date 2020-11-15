@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.nit.entity">
+	<class name="Person" table="PERSON_TPC">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<property name="name" />
+		<property name="address" />
+
+		<joined-subclass name="Student" table="STUDENT_TPC">
+			<key column="PERSON_ID" />
+			<property name="std" />
+			<property name="school" />
+			<property name="marks" />
+		</joined-subclass>
+
+		<joined-subclass name="Employee" table="EMPLOYEE_TPC">
+			<key column="PERSON_ID" />
+			<property name="desg" />
+			<property name="company" />
+			<property name="salary" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping> 
