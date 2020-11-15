@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 2, 2020 2:16:32 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.nit.entity.Person" table="PERSON_INFO">
+        <id name="pId">
+			<generator class="sequence"/>		</id>
+		<property name="pName"  type="string"  length="20"/>
+		<property name="birthDate" type="date" />  <!--INPUT = new Date(97,12,01,12,45,50)   saveAs =01-JAN-98 -->
+		<property name="preDate" type="time"/>  <!--INPUT = new Date(97,12,01,12,45,50)   saveAs =01-JAN-98 -->
+		<property name="regDate" type="timestamp"/> <!--INPUT = new Date(97,12,01,12,45,50)   saveAs =01-JAN-98 12.45.50.000000000 PM --> 
+	</class>
+
+
+
+
+
+	<!-- <class name="com.nit.entity.Person" table="PERSON"> <id name="pid" 
+		type="java.lang.Integer"> <column name="PID" /> <generator class="assigned" 
+		/> </id> <property name="pname" type="java.lang.String"> <column name="PNAME" 
+		/> </property> <property name="birthDate" type="java.util.Date"> <column 
+		name="BIRTHDATE" /> </property> <property name="regDate" type="java.util.Date"> 
+		<column name="REGDATE" /> </property> <property name="preDate" type="java.util.Date"> 
+		<column name="PREDATE" /> </property> </class> -->
+</hibernate-mapping>
