@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2020 8:22:16 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.nit.model.Project"   lazy="false">
+      <id name="proID" type="java.lang.Long">
+      <column name="PROID"/>
+      <generator class="increment"/>
+      </id> 
+       <property name="pName" type="java.lang.String" access="field">
+            <column name="PNAME" />
+        </property>
+        <property name="pCompony" type="java.lang.String" access="field">
+            <column name="PCOMPONY" />
+        </property>
+        <property name="pDuration" type="java.lang.String" access="field">
+            <column name="PDURATION" />
+        </property>
+    </class>
+</hibernate-mapping>
