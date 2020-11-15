@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context>
+	<Resource name="dsJndi" auth="Container"
+		type="oracle.jdbc.pool.OracleDataSource" maxActive="50" maxIdle="30"
+		maxWait="10000" username="system" password="manager"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@localhost:1521:xe" />
+</Context>
