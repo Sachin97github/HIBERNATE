@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.nit.entity">
+	<class name="Person" table="PERSON_TPCH"
+		discriminator-value="person">
+		<id name="id">
+			<generator class="sequence" />
+		</id>
+		<discriminator column="PERSON_TYPE" type="string" />
+		<property name="name">
+			<column name="NAME" length="20" />
+			<type name="string" />
+		</property>
+		<property name="address">
+			<type name="string" />
+		</property>
+		<subclass name="Student" discriminator-value="student">
+			<property name="std" />
+			<property name="school" />
+			<property name="marks" />
+		</subclass>
+		<subclass name="Employee" discriminator-value="employee">
+			<property name="desg" />
+			<property name="company" />
+			<property name="salary">
+				<column name="SALARY" scale="10" precision="2">
+				</column>
+				<type name="double" />
+			</property>
+		</subclass>
+	</class>
+</hibernate-mapping> 
