@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.nit.entity">
+	<class name="Person" table="PERSON_BAG">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<property name="name" />
+		<property name="gender" />
+		<property name="address" />
+		<!--"save-update"  -->
+		 <bag name="phones" cascade="all-delete-orphan">
+		 <key column="PERSON_ID"/>
+		 <one-to-many class="PhoneNumber"/>
+		 </bag>
+		 
+		 
+</class>
+</hibernate-mapping> 
