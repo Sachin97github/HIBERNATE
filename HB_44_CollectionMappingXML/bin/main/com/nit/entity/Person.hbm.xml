@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.nit.entity">
+	<class name="Person" table="PERSON_INFO">
+		<id name="id">
+			<generator class="sequence" />
+		</id>
+		<property name="name" />
+		<property name="gender" />
+       
+       <set name="phones" table="PHONES">
+        <key column="PERSON_ID"/>
+         <element column="PHONE" type="string"/>
+       </set>
+       
+     <!--   <list name="friends" table="FRIENDS">
+       <key column="PERSON_ID"/>  
+       <list-index column="FRIENDNO"  base="1"/>
+       <element column="FRIEND" type="string"/>
+       </list>
+        -->
+        
+        <!-- We can Ignore List-index column by "bag" (Same as List)-->
+        <bag name="friends" table="FRIENDS">
+       <key column="PERSON_ID" /> 
+       <element column="FRIEND" type="string"/>
+       </bag>
+     
+     <map name="family" table="FAMILY">
+    <key column="PERSON_ID"/>
+     <map-key column="RELATION"  type="string"/>
+     <element column="NAME" type="string"/>
+     </map>
+       
+       
+	</class>
+</hibernate-mapping> 
